@@ -1,0 +1,93 @@
+
+/* HEADER VARIANTS: shared accessible dropdowns and reliable overflow rules. */
+.atx-menu-item {position:relative;display:flex;align-items:center;min-width:0;}
+.atx-menu-item .nav-link {padding-right:2px;}
+.atx-drop-btn {background:transparent;display:inline-flex;align-items:center;justify-content:center;padding:8px 4px;color:inherit;font-size:18px;line-height:1;}
+.atx-drop-btn span {display:block;transition:transform .25s ease;transform:translateY(-2px);}
+.atx-dropdown:hover .atx-drop-btn span,.atx-dropdown:focus-within .atx-drop-btn span,.atx-dropdown.is-expanded .atx-drop-btn span {transform:rotate(180deg) translateY(2px);}
+.atx-submenu {position:absolute;top:calc(100% - 6px);left:-10px;z-index:50;width:238px;padding:9px;background:#101820;color:white;border:1px solid #ffffff22;border-top:3px solid #e11d2e;border-radius:0 0 12px 12px;box-shadow:0 22px 50px #0005;opacity:0;visibility:hidden;transform:translateY(10px);pointer-events:none;transition:opacity .23s ease,transform .23s ease,visibility .23s ease;}
+.atx-dropdown:hover .atx-submenu,.atx-dropdown:focus-within .atx-submenu,.atx-dropdown.is-expanded .atx-submenu {opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}
+.atx-submenu a {display:block;font-size:12px;font-weight:700;padding:12px 13px;border-radius:6px;line-height:1.3;transition:background .2s,color .2s;}
+.atx-submenu a:hover,.atx-submenu a:focus-visible {background:#ffffff13;color:#e11d2e;}
+.atx3-header .button,.atx5-header .button {position:relative;overflow:hidden;white-space:nowrap;}
+.atx3-header .button:before,.atx5-header .button:before {pointer-events:none;}
+.atx3-header a:focus-visible,.atx3-header button:focus-visible,.atx5-header a:focus-visible,.atx5-header button:focus-visible {outline:3px solid #e11d2e;outline-offset:4px;}
+@media (prefers-reduced-motion: reduce) {
+  .atx3-header *, .atx5-header * {transition-duration:0.01ms!important;animation-duration:0.01ms!important;}
+}
+
+/* HEADER 05 — geometry-first diagonal brand / black menu / stacked CTA */
+.atx5-header.site-header {background:#0a0e12;border:0;border-bottom:3px solid #e11d2e;box-shadow:0 10px 29px #0004;backdrop-filter:none;-webkit-backdrop-filter:none;}
+.atx5-header.site-header.scrolled {box-shadow:0 18px 45px #0006;}
+.atx5-shell {width:100%;min-height:90px;display:flex;align-items:stretch;position:relative;isolation:isolate;}
+.atx5-brand-panel {position:relative;display:flex;align-items:center;justify-content:center;flex:0 0 clamp(240px,22vw,330px);padding:0px 45px 0px 26px;background:#f9fafb;clip-path:polygon(0 0,100% 0,calc(100% - 43px) 100%,0 100%);}
+.atx5-brand-panel:after{content:"";position:absolute;z-index:1;right:29px;top:-18%;height:138%;width:13px;background:#e11d2e;transform:rotate(25deg);}
+.atx5-header .brand{width:185px;flex:none;transform:none;}
+.atx5-header .brand::before{display:none;}
+.atx5-header .brand-logo{width:100%;height:auto;max-height:104px;object-fit:contain;filter:drop-shadow(0 3px 5px #0001);}
+.atx5-navigation{display:flex;align-items:center;flex:1;min-width:0;justify-content:center;padding:0 14px;background:radial-gradient(circle at 20% 90%,#191e23,#070b0f 70%);}
+.atx5-header .main-nav{display:flex;align-items:center;justify-content:space-evenly;gap:clamp(20px,4vw,40px);height:100%;color:#fff;}
+.atx5-header .main-nav .nav-link{font-size:15px;font-weight:800;color:#f4f5f5;white-space:nowrap;}
+.atx5-header .main-nav .nav-link:hover,.atx5-header .main-nav .nav-link.active{color:#e11d2e;;}
+.atx5-header .main-nav .nav-link:after{height:3px;bottom:30px;background:#e11d2e;;}
+.atx5-header .atx-drop-btn{color:#fff;}
+.atx5-header .atx5-actions{width:clamp(207px,19vw,260px);flex:0 0 clamp(207px,19vw,260px);flex-direction:column;align-items:stretch;gap:0;justify-content:stretch;}
+.atx5-header .atx5-actions>a{flex:1;min-height:50px;display:flex;align-items:center;justify-content:center;gap:11px;padding:10px 21px 10px 31px;clip-path:polygon(17% 0,100% 0,100% 100%,0 100%);border:0;border-radius:0;white-space:nowrap;font-size:12px;font-weight:800;}
+.atx5-header .atx5-phone {background:linear-gradient(115deg,#e11d2e,#e11d2e);color:#fff;}
+.atx5-header .atx5-phone svg {width:18px;height:18px;}
+.atx5-header .atx5-quote {background:#f7f8f8;color:#13191d;box-shadow:none;min-height:54px;margin:0;}
+.atx5-header .atx5-quote:hover {background:#fff3eb;color:#e11d2e;box-shadow:none;transform:none;}
+.atx5-header .atx5-quote svg {width:17px;height:17px;}
+.atx5-header .atx5-actions .menu-toggle {display:none;}
+.atx5-header .atx-submenu{top:calc(100% - 10px);}
+@media(max-width:1390px) {
+ .atx5-brand-panel {flex-basis:242px;padding-right:45px;}
+ .atx5-header .brand{width:158px;}
+ .atx5-header .main-nav{gap:16px;}
+ .atx5-header .main-nav .nav-link{font-size:14px;}
+ .atx5-header .atx5-actions{width:215px;flex-basis:215px;}
+}
+@media(max-width:1160px) {
+ .atx5-shell{min-height:82px;height:82px;}
+ .atx5-brand-panel{flex:0 0 220px;}
+ .atx5-header .brand {width:150px;}
+ .atx5-navigation{flex:1;}
+ .atx5-header .main-nav {display:none;position:absolute;top:100%;left:0;right:0;height:auto;max-height:calc(100dvh - 82px);overflow-y:auto;padding:13px 24px 22px;flex-direction:column;align-items:stretch;gap:0;background:#101820;color:white;border-top:1px solid #ffffff26;box-shadow:0 20px 35px #0005;z-index:60;}
+ .atx5-header .main-nav.is-open {display:flex;}
+ .atx5-header .main-nav .nav-link{height:auto;min-height:48px;padding:13px 0;font-size:14px;border-bottom:1px solid #ffffff18;}
+ .atx5-header .main-nav .nav-link:after{display:none;}
+ .atx5-header .atx-menu-item {display:flex;flex-wrap:wrap;justify-content:space-between;border-bottom:1px solid #ffffff18;}
+ .atx5-header .atx-menu-item .nav-link{border-bottom:0;flex:1;}
+ .atx5-header .atx-drop-btn {height:45px;width:45px;}
+ .atx5-header .atx-submenu{position:static;width:100%;max-height:0;padding:0;border:0;overflow:hidden;opacity:1;visibility:visible;transform:none;pointer-events:none;border-radius:0;box-shadow:none;background:#19232a;transition:max-height .25s ease,padding .25s ease;}
+ .atx5-header .atx-dropdown:hover .atx-submenu,.atx5-header .atx-dropdown:focus-within .atx-submenu {max-height:0;padding:0;pointer-events:none;}
+ .atx5-header .atx-dropdown.is-expanded .atx-submenu,.atx5-header .atx-dropdown.is-expanded:hover .atx-submenu{max-height:250px;padding:8px;pointer-events:auto;}
+ .atx5-header .atx-submenu a {padding:12px;}
+ .atx5-header .atx5-actions {flex:none;width:auto;flex-direction:row;align-items:center;gap:10px;justify-content:flex-end;padding:0 28px 0 5px;background:#090e13;}
+ .atx5-header .atx5-actions .atx5-phone {width:43px;height:43px;flex:none;clip-path:none;padding:0;border:1px solid #e11d2e;border-radius:10px;background:#ff6a2417;color:#e11d2e;}
+ .atx5-header .atx5-actions .atx5-phone span{display:none;}
+ .atx5-header .atx5-actions .atx5-quote{display:none;}
+ .atx5-header .atx5-actions .menu-toggle {display:flex;width:44px;height:43px;border-radius:10px;border:1px solid #ffffff36;background:#ffffff0b;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:0;}
+ .atx5-header .menu-toggle span{background:white;width:22px;height:2px;transition:transform .25s;}
+ .atx5-header .menu-toggle[aria-expanded="true"] span:first-child{transform:translateY(4.5px) rotate(45deg);}
+ .atx5-header .menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-4.5px) rotate(-45deg);}
+ .atx5-header .mobile-nav-quote{display:flex;align-self:flex-start;margin-top:16px;background:#e11d2e;border-radius:9px;min-height:45px;padding:12px 22px;color:white;font-size:12px;}
+}
+@media(max-width:760px) {
+ .atx5-shell{height:76px;min-height:76px;}
+ .atx5-brand-panel{flex:0 0 180px;padding:6px 35px 6px 13px;clip-path:polygon(0 0,100% 0,calc(100% - 26px) 100%,0 100%);}
+ .atx5-brand-panel:after{right:19px;width:9px;}
+ .atx5-header .brand{width:123px;flex:none;}
+ .atx5-header .brand-logo{max-height:69px;}
+ .atx5-header .main-nav{max-height:calc(100dvh - 76px);}
+ .atx5-header .atx5-actions{gap:9px;padding-right:17px;}
+ .atx5-header .atx5-actions .atx5-phone{width:39px;height:39px;}
+ .atx5-header .atx5-actions .menu-toggle{width:41px;height:39px;}
+}
+@media(max-width:390px) {
+ .atx5-brand-panel{flex:0 0 149px;padding-left:8px;padding-right:26px;}
+ .atx5-header .brand{width:104px;}
+ .atx5-header .atx5-actions{gap:7px;padding-right:12px;}
+ .atx5-header .atx5-actions .atx5-phone{width:36px;height:36px;}
+ .atx5-header .atx5-actions .menu-toggle{width:38px;height:36px;}
+}

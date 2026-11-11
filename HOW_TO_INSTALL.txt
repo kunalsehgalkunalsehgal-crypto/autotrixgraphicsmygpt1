@@ -1,0 +1,20 @@
+AUTOTRIX HEADER 05 — CHANGE ONLY HEADER, KEEP THE REST OF SITE
+
+1. Backup your existing files.
+2. Open index.html and replace everything from
+   <!-- 01. Announcement and sticky navigation -->
+   to just BEFORE <main id="main"> with the content from HEADER_ONLY.html.
+3. Copy header-05.css next to style.css and add AFTER existing style.css inside <head>:
+   <link rel="stylesheet" href="header-05.css">
+4. Copy header-options.js next to script.js and add with defer AFTER existing script.js:
+   <script defer src="header-options.js"></script>
+5. In script.js for this variant ONLY, change
+   (min-width: 761px)
+   to (min-width: 1161px)
+   so the existing mobile menu closes correctly after resizing.
+6. Keep your existing logo at assets/autotrix-official-logo.png
+7. Refresh Ctrl + Shift + R. No third-party libraries needed.
+
+Do NOT combine both headers' CSS files. Choose exactly one header.
+The rest of the page, current form behavior, hero carousel, gallery, dialogs and FAQ are kept.
+Thank-you.html is included, unchanged.
