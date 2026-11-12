@@ -29,7 +29,7 @@
 .atx5-header .main-nav{display:flex;align-items:center;justify-content:space-evenly;gap:clamp(20px,4vw,40px);height:100%;color:#fff;}
 .atx5-header .main-nav .nav-link{font-size:15px;font-weight:800;color:#f4f5f5;white-space:nowrap;}
 .atx5-header .main-nav .nav-link:hover,.atx5-header .main-nav .nav-link.active{color:#e11d2e;;}
-.atx5-header .main-nav .nav-link:after{height:3px;bottom:30px;background:#e11d2e;;}
+/* .atx5-header .main-nav .nav-link:after{height:3px;bottom:30px;background:#e11d2e;;} */
 .atx5-header .atx-drop-btn{color:#fff;}
 .atx5-header .atx5-actions{width:clamp(207px,19vw,260px);flex:0 0 clamp(207px,19vw,260px);flex-direction:column;align-items:stretch;gap:0;justify-content:stretch;}
 .atx5-header .atx5-actions>a{flex:1;min-height:50px;display:flex;align-items:center;justify-content:center;gap:11px;padding:10px 21px 10px 31px;clip-path:polygon(17% 0,100% 0,100% 100%,0 100%);border:0;border-radius:0;white-space:nowrap;font-size:12px;font-weight:800;}
